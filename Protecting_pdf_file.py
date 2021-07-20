@@ -6,12 +6,12 @@ def pdf_secure(file, password):
     for page in range(pdf.numPages):
         parser.addPage(pdf.getPage(page))
     parser.encrypt(password)
-    with open(f"Feito_{file}", "wb")as f:
+    with open(f"Protect_{file}", "wb")as f:
         parser.write(f)
         f.close()
-        print(f"feito_{file} Created..")
+        print(f"Feito {file} Created..")
 if __name__== "__main__":
-    file = "MESI-2021-FC-Av.pdf"
+    file = input('PDF a encriptar: ')
     password = input('Enter the Password: ')
     print('Starting scan on host: ', password)
     # password = "bala"
